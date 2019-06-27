@@ -73,6 +73,7 @@
             handleView (name) {
                 // this.imgName = name;
                 // this.visible = true;
+                console.log(name);
             },
             handleRemove (file) {
                 const fileList = this.$refs.upload.fileList;
@@ -133,14 +134,12 @@
         }
         .uploadarea {
             width: 301px;
-            // height: 201px;
             margin: 20px auto 0;
             box-sizing: border-box;
             border: 1px solid #E6E6E6;
             padding: 20px;
             .uploadcon {
                 width: 260px;
-                // height: 160px;
             }
         }
         .mobilebtn {
