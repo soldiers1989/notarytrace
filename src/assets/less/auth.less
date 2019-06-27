@@ -1,0 +1,179 @@
+.authtit {
+	width: 100%;
+	margin-bottom: 40px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	color: #333333;
+}
+.authPos {
+	width: 400px;
+	margin: 70px auto 0;
+	box-sizing: border-box;
+	padding: 30px;
+	background-color: #ffffff;
+}
+.authIview {
+	.ivu-form-item {
+		margin-bottom: 40px;
+	}
+	.ivu-input-group-prepend, .ivu-input-group-append {
+		padding: 4px 14px;
+		font-size: 24px;
+	}
+	.ivu-input-group .ivu-input {
+		height: 50px;
+	}
+	.ivu-btn {
+		padding: 10px 15px;
+	}
+}
+.loginarea {
+	position: relative;
+	box-sizing: content-box;
+	min-height: 800px;
+	padding-top: 70px;
+	.logincon {
+		.authPos;
+		.authIview;
+		.logtips {
+			width: 100%;
+			margin: 10px auto 0;
+			display: flex;
+			justify-content: space-between;
+			.forgettxt {
+				font-size: 12px;
+				color: #666666;
+				a {
+					color: @primary-color;
+					cursor: pointer;
+				}
+			}
+			.registertxt {
+				font-size: 12px;
+				color: #666666;
+				a {
+					color: @primary-color;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+.redisterarea {
+	position: relative;
+	box-sizing: content-box;
+	padding-top: 70px;
+	.regiscon {
+		.authPos;
+		.authIview;
+		.codeinput {
+			width: 210px;
+		}
+		.codebtn {
+			position: absolute;
+			right: 0;
+			top: 1px;
+			width: 108px;
+			height: 50px;
+			background-color: @primary-color;
+			border: none;
+			border-radius: 0;
+			font-size: 14px;
+			line-height: 18px;
+			color: #fefefe;
+		}
+		.regitips {
+			width: 300px;
+			margin: 20px auto 0;
+			display: flex;
+			justify-content: space-between;
+			.forgettxt {
+				display: flex;
+				justify-content: flex-start;
+				color: #666666;
+				h2 {
+					font-size: 12px;
+					line-height: 20px;
+					color: #666666;
+				}
+			}
+			.registertxt {
+				font-size: 12px;
+				a {
+					color: @primary-color;
+					cursor: pointer;
+				}
+			}
+			.resettxt {
+				width: 100%;
+				font-size: 12px;
+				text-align: center;
+				color: #666666;
+				a {
+					color: @primary-color;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+.verifyarea {
+	position: relative;
+	box-sizing: content-box;
+	min-height: 700px;
+	padding-top: 70px;
+	.verifywrap {
+		width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-around;
+	}
+	.verifypic {
+		width: 330px;
+		height: 287px;
+		margin-top: 70px;
+		background: url('../img/verifypic.png');
+		background-size: 100% 100%;
+	}
+	.verifycon {
+		width: 400px;
+		margin: 70px 70px 0 0;
+		box-sizing: border-box;
+		padding: 30px 38px;
+		background-color: #ffffff;
+		.ivu-form-item, .ivu-select {
+			margin-bottom: 40px;
+		}
+		.ivu-input-group-prepend, .ivu-input-group-append {
+			display: none;
+		}
+		.ivu-input-group .ivu-input {
+			height: 50px;
+		}
+		.ivu-btn {
+			margin-top: 40px;
+			padding: 10px 15px;
+		}
+	}
+}
+.openarea {
+	.authPos;
+	width: 950px;
+	background-color: transparent;
+	display: flex;
+	justify-content: space-between;
+	.openpic {
+		width: 468px;
+		height: 344px;
+		margin-top: 30px;
+		background: url('../img/openplatepic.png');
+		background-size: 100% 100%;
+	}
+	.loginarea {
+		position: absolute;
+		top: 30px;
+		right: 0;
+		transform: translateX(20%) translateY(0);
+	}
+}

@@ -1,0 +1,90 @@
+.law {
+	padding-top: 70px;
+	.bigpic {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		background: url('http://filecdn.notarytrace.com/vue/img/probigpic3.png') 50% 50% no-repeat;
+		background-size: cover;
+	}
+	.bigpictxt {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		-ms-transform: translateX(-50%) translateY(-50%);
+		-moz-transform: translateX(-50%) translateY(-50%);
+	}
+	.bigpictxt h2 {
+		margin-bottom: 15px;
+		font-size:36px;
+		font-weight:bold;
+		color: #ffffff;
+	}
+	.lawcon {
+		display: flex;
+		justify-content: space-between;
+	}
+	.lawsort {
+		width: 260px;
+		height: 420px;
+		box-sizing: border-box;
+		padding: 30px;
+		background-color: #ffffff;
+	}
+	.lawsort li {
+		width: 100%;
+		height: 60px;
+		font-size: 18px;
+		text-align: center;
+		line-height: 60px;
+		color: #999999;
+		cursor: pointer;
+	}
+	.lawsort li:hover{
+		background-color: #eeeeee;
+	}
+	.lawsort li div {
+		display: inline-block;
+		margin: 0 auto;
+	}
+	.lawsort li em {
+		display: none;
+		float: left;
+		width: 20px;
+		height: 2px;
+		margin: 30px 20px 0 0;
+		background-color: #FFCC2B;
+	}
+	.lawsort li span {
+		float: right;
+	}
+	.lawsort .active {
+		font-weight: bold;
+		color: #333333
+	}
+	.lawsort .active em {
+		display: block;
+	}
+	.lawtxtcon {
+		width: 910px;
+		box-sizing: border-box;
+		padding: 30px 40px;
+		background-color: #ffffff;
+	}
+	.lawtxtcon h2 {
+		margin-bottom: 50px;
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+		color: #333333;
+	}
+	.lawtxtcon p {
+		margin-bottom: 20px;
+		font-size: 16px;
+		text-indent: 2em;
+		text-align: left;
+		color: #333333;
+	}
+}

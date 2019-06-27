@@ -1,0 +1,292 @@
+.account {
+	min-width: 1200px;
+	min-height: 1000px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	.actab {
+		width: 100%;
+		height: 50px;
+		background-color: #F0F3F8;
+		.actabcon {
+			width: 1150px;
+			height: 100%;
+			margin: 0 auto;
+			padding-left: 50px;
+			ul {  
+				li {
+					position: relative;
+					a {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			.ivu-menu-light {
+				background-color: #F0F3F8;
+			}
+			.ivu-menu-horizontal {
+				height: 50px;
+				line-height: 50px;
+			}
+			.ivu-menu-item {
+				color: #666666;
+			}
+			.ivu-menu-item-active,
+			.ivu-menu-item:hover {
+				color: @primary-color;
+			}
+			.ivu-menu-horizontal.ivu-menu-light:after {
+				height: 0px;
+			}
+		}
+	}
+	.setting {
+		width: 1200px;
+		margin: 30px auto 0;
+		.setcon {
+			width: 1200px;
+			display: flex;
+			justify-content: space-between;
+			.setitem {
+				width: 390px;
+				height: 420px;
+				box-sizing: border-box;
+				padding: 25px 40px 35px;
+				background-color: #ffffff;
+				.itemtit {
+					position: relative;
+					height: 50px;
+					margin-bottom: 20px;
+					font-size: 32px;
+					line-height: 50px;
+					color: #333333;
+					em {
+						position: absolute;
+						top: 15px;
+						left: 140px;
+						width: 20px;
+						height: 20px;
+						background: url('../img/acicon1.png');
+						background-size: 100% 100%;
+						cursor: pointer;
+					}
+				}
+				.baseinfo {
+					height: 290px;
+					display: flex;
+					justify-content: space-between;
+					flex-direction: column;
+					li {
+						display: flex;
+						justify-content: flex-start;
+					}
+					.infoname {
+						margin-right: 50px;
+						font-size: 16px;
+						color: #666666;
+					}
+					.infotxt {
+						font-size: 14px;
+						color: #333333;
+					}
+					.avatar {
+						width: 50px;
+						height: 50px;
+						span,img {
+							display: block;
+							width: 100%;
+							height: 100%;
+						}
+						.ivu-avatar {
+							border-radius: 50%;
+						}
+					}
+					.infoicon {
+						width: 14px;
+						height: 14px;
+						margin: 4px 0 0 10px;
+						background: url('../img/acicon2.png');
+						background-size: 100% 100%;
+						cursor: pointer;
+					}
+					.bluecolor {
+						color: @primary-color;
+					}
+				}
+				.alertset {
+					width: 200px;
+					margin: 75px auto 0;
+					h2 {
+						font-size: 16px;
+						font-weight: normal;
+						color: #333333;
+					}
+					.alertday {
+						width: 100%;
+						height: 36px;
+						margin: 25px 0;
+						box-sizing: border-box;
+						border: 1px solid @primary-color;
+						display: flex;
+						justify-content: flex-start;
+						.minusbtn, .addbtn {
+							width: 50px;
+							height: 100%;
+							font-size: 30px;
+							text-align: center;
+							color: #666666;
+							cursor: pointer;
+							-webkit-touch-callout:none;
+						    -webkit-user-select: none;
+						    -khtml-user-select: none;
+						    -moz-user-select: none;
+						    -ms-user-select: none;
+						    user-select: none;
+						    -o-user-select: none;
+						}
+						.minusbtn {
+							border-right: 1px solid @primary-color;
+							line-height: 30px;
+						}
+						.addbtn {
+							border-left: 1px solid @primary-color;
+							line-height: 36px;
+						}
+						.daytxt {
+							width: 100px;
+							height: 100%;
+							font-size: 16px;
+							text-align: center;
+							line-height: 36px;
+							color: #666666;
+						}
+					}
+				}
+				.informset {
+					height: 100px;
+					margin-top: 100px;
+					display: flex;
+					justify-content: space-between;
+					flex-direction: column;
+					li {
+						display: flex;
+						justify-content: space-between;
+					}
+					.infoname {
+						margin-right: 50px;
+						font-size: 16px;
+						color: #666666;
+					}
+				}
+			}
+		}
+	}
+	.mycombo {
+		width: 1200px;
+		margin: 30px auto 0;
+		.combocon {
+			width: 100%;
+			background-color: #ffffff;
+			.combotit {
+				width: 100%;
+				height: 80px;
+				margin-bottom: 30px;
+				font-size: 30px;
+				line-height: 80px;
+				text-indent: 1em;
+				color: #333333;
+			}
+			.combowrap {
+				width: 940px;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				.comboitem {
+					overflow: hidden;
+					width: 240px;
+					height: 340px;
+					border-radius: 10px;
+					margin-bottom: 60px;
+					box-shadow: 0 0 5px 0 #333333;
+					.toptit {
+						width: 100%;
+						height: 98px;
+						background-color: #1C53F4;
+						font-size: 24px;
+						font-weight: normal;
+						text-align: center;
+						line-height: 98px;
+						color: #FFFFFF;
+					}
+					.combot {
+						width: 100%;
+						height: 242px;
+						display: flex;
+						justify-content: space-around;
+						flex-direction: column;
+						.pricecon {
+							width: 100%;
+							.nowprice {
+								font-size: 34px;
+								line-height: 26px;
+								text-align: center;
+								color: #1C53F4;
+							}
+							.lastprice {
+								font-size: 16px;
+								text-align: center;
+								color: #666666;
+								text-decoration:line-through;
+							}
+						}
+						.comnum {
+							width: 100%;
+							.comnumtxt {
+								font-size: 16px;
+								text-align: center;
+								color: #666666;
+							}
+						}
+						.buybtn {
+							width: 120px;
+							height: 40px;
+							border-radius: 10px;
+							margin: 0 auto;
+							background-color: #1C53F4;
+							font-size: 16px;
+							text-align: center;
+							line-height: 40px;
+							color: #ffffff;
+							cursor: pointer;
+						}
+						.buybtn:hover {
+							opacity: 0.8;
+						}
+					}
+				}
+			}
+		}
+	}
+	.mysignature {
+		width: 1200px;
+		height: 500px;
+		background-color: skyblue;
+		margin: 30px auto 0;
+	}
+	.contact {
+		width: 1200px;
+		height: 500px;
+		background-color: yellow;
+		margin: 30px auto 0;
+	}
+	.feedback {
+		width: 1200px;
+		height: 500px;
+		background-color: pink;
+		margin: 30px auto 0;
+	}
+}

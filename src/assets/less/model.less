@@ -1,0 +1,299 @@
+.model {
+	min-width: 1200px;
+	min-height: 1000px;
+	margin: 30px auto 0;
+	.modelcon {
+		width: 100%;
+		.modelleft {
+			float: left;
+			width: 250px;
+			margin: 0 20px;
+			background-color: #ffffff;
+			.listgroup {
+				width: 100%;
+				margin-bottom: 30px;
+				box-sizing: border-box;
+				border-top: 1px solid #f5f5f5;
+				.listbtn {
+					width: 100%;
+					padding: 10px 20px;
+					display: flex;
+					justify-content: space-between;
+					span {
+						font-size: 16px;
+						color: #333333;
+					}
+					em {
+						width: 12px;
+						height: 7px;
+						margin-top: 8px;
+						background: url('../img/docicon1.png');
+						background-size: 100% 100%;
+					}
+				}
+				.listcon {
+					width: 100%;
+					.listitem {
+						height: 40px;
+						box-sizing: border-box;
+						padding: 10px 20px;
+						cursor: pointer;
+						.listicon {
+							float: left;
+							width: 20px;
+							height: 20px;
+							margin-right: 20px;
+							img {
+								display: block;
+								width: 100%;
+								height: 100%;
+							}
+						}
+						.listtxt {
+							float: left;
+							font-size: 16px;
+							color: #333333;
+						}
+						.listnum {
+							float: right;
+							font-size: 16px;
+							color: #999999;
+						}
+					}
+					.listitem:hover {
+						background-color: #F0F0F0;
+					}
+				}
+				.listcon .listactive {
+					background-color: #F0F0F0;
+				}
+			}
+		}
+		.modelright {
+			float: left;
+			width:calc(100% - 300px);
+			padding-right: 30px;
+			.righttit {
+				position: relative;
+				width: 100%;
+				height: 60px;
+				box-sizing: border-box;
+				margin-bottom: 20px;
+				padding: 0px 30px;
+				background-color: #ffffff;
+				font-size: 26px;
+				line-height: 60px;
+				color: #333333;
+				.signbtn {
+					display: block;
+					width: 150px;
+					height: 40px;
+					background-color: @primary-color;
+					font-size: 20px;
+					text-align: center;
+					line-height: 40px; 
+					color: #ffffff;
+				}
+				.signbtn:hover {
+					opacity: 0.8;
+				}
+				.addbtn {
+					position: absolute;
+					top: 15px;
+					right: 30px;
+					width: 50px;
+					height: 30px;
+					border-radius: 5px;
+					background-color: @primary-color;
+					cursor: pointer;
+					font-size: 14px;
+					text-align: center;
+					line-height: 30px;
+					color: #ffffff;
+				}
+			}
+			.modelindex {
+				.rightsearch {
+					width: 100%;
+					box-sizing: border-box;
+					margin-bottom: 20px;
+					padding: 12px 30px;
+					background-color: #ffffff;
+					.searcharea {
+						width: 100%;
+						.search {
+							position: relative;
+							left: 50%;
+							transform: translateX(-50%);
+							width: 500px;
+							input {
+								width: 420px;
+								height: 36px;
+							}
+							.searchbtn {
+								position: absolute;
+								right: 0;
+								top: 0;
+								width: 80px;
+								height: 100%;
+								background-color: @primary-color;
+								font-size: 16px;
+								text-align: center;
+								line-height: 36px;
+								color: #FFFFFF;
+								cursor: pointer;
+							}
+						}
+					}
+					.picarea {
+						width: 100%;
+						height: 30px;
+						margin-top: 30px;
+						form {
+							width: 100%;
+							height: 100%;
+							display: flex;
+							justify-content: flex-start;
+							.ivu-form-item {
+								display: flex;
+								justify-content: flex-start;
+								height: 100%;
+								margin: 0 15px 0 0;
+								label {
+									padding: 10px 0px 10px 0;
+									margin-right: 10px;
+								}
+								.ivu-form-item-content {
+									width: 75px;
+									.ivu-select {
+										margin-top: -3px;
+									}
+								}
+							}
+						}
+					}
+				}
+				.righttable {
+					width: 100%;
+					margin-bottom: 20px;
+					.ivu-table-header {
+						.ivu-table-cell-with-selection {
+							padding: 0;
+						}
+					}
+					.ivu-table th {
+						height: 60px;
+						background-color: @primary-color;
+						font-size: 16px;
+						color: #ffffff; 
+						text-align: center;
+					}
+					.noneDisplay {
+						visibility:hidden;
+					}
+				}
+			}
+			.modeldetail {
+				.detailinfo {
+					width: 100%;
+					overflow: hidden;
+					.infotit {
+						width: 100%;
+						height: 26px;
+						margin-bottom: 20px;
+						box-sizing: border-box;
+						border-left: 3px solid @primary-color;
+						display: flex;
+						justify-content: flex-start;
+						.infotitxt {
+							margin: 0 20px 0 20px;
+							font-size: 20px;
+							line-height: 26px;
+							color: #333333;
+						}
+						.infoeditbtn {
+							position: relative;
+							width: 22px;
+							height: 22px;
+							margin-top: 2px;
+							background-color: @primary-color;
+							cursor: pointer;
+							span {
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translateX(-50%) translateY(-50%);
+								width: 14px;
+								height: 14px;
+								background: url('../img/penicon.png');
+								background-size: 100% 100%;
+							}
+						}
+					}
+					.infowrap {
+						width: 100%;
+						margin-bottom: 50px;
+						border-left: 1px solid #E6E6E6;
+						display: flex;
+						justify-content: flex-start;
+						flex-wrap: wrap;
+						.infoitem {
+							// width: 310px;
+							height: 50px;
+							background-color: #ffffff;
+							box-sizing: border-box;
+							border-top: 1px solid #E6E6E6;
+							border-bottom: 1px solid #E6E6E6;
+							border-right: 1px solid #E6E6E6;
+							display: flex;
+							justify-content: flex-start;
+							.infolabel {
+								width: 170px;
+								height: 100%;
+								background-color: #F5F5F5;
+								font-size: 16px;
+								text-align: center;
+								line-height: 50px;
+								color: #666666;
+							}
+							.infotxt {
+								width: 300px;
+								height: 100%;
+								font-size: 16px;
+								text-align: center;
+								line-height: 50px;
+								color: #666666;
+								overflow:hidden;
+						        text-overflow:ellipsis; 
+						        white-space: nowrap;
+							}
+						}
+						.imgarea {
+							position: relative;
+							display: inline-block;
+							.signimg {
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translateX(-50%) translateY(-50%);
+								z-index: 10;
+								width: 100%;
+							}
+						}
+					}
+				}
+				.tabarea {
+					width: 100%;
+					padding-bottom: 50px;
+					.ivu-table th {
+						height: 60px;
+						background-color: @primary-color;
+						font-size: 16px;
+						color: #ffffff; 
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}

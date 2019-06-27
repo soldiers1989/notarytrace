@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#app,
+.wrapper {
+    width: 100%;
+}
+
+li {list-style-type:none;}
+
+body {
+    font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+}
+
+a {
+	color: #e0e0e0;
+    text-decoration: none
+}
+a:hover {
+	color: #e0e0e0;
+}
+.clearfix:after,.clearfix:before {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both; }
+
+.home {
+	width: 100%;
+	background: url('../img/homebac.png');
+	background-position: 50% 50%;
+	background-size: cover;
+}
+.page {
+	position: relative;
+	width: 100%;
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-around;
+	.ivu-page-prev, .ivu-page-next {
+		background-color: transparent;
+	}
+	.addbtn {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 50px;
+		height: 30px;
+		border-radius: 5px;
+		background-color: @primary-color;
+		cursor: pointer;
+		font-size: 14px;
+		text-align: center;
+		line-height: 30px;
+		color: #ffffff;
+	}
+}
+.ivu-modal-wrap {
+	.ivu-modal-body {
+		display: flex;
+		justify-content: space-around;
+		.addarea {
+			width: 45%;
+			form {
+				margin-bottom: 30px;
+				.edittit {
+					margin-bottom: 15px;
+					border-left: 5px solid @primary-color;
+					text-indent: 1em;
+				}
+				.imgarea {
+					position: relative;
+					display: inline-block;
+					.signimg {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translateX(-50%) translateY(-50%);
+						z-index: 10;
+						width: 100%;
+					}
+				}
+				
+			}
+		}
+		.addsubarea {
+			width: 100%;
+			form {
+				margin-bottom: 30px;
+				.edittit {
+					margin-bottom: 15px;
+					border-left: 5px solid @primary-color;
+					text-indent: 1em;
+				}
+				.imgarea {
+					position: relative;
+					display: inline-block;
+					.signimg {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translateX(-50%) translateY(-50%);
+						z-index: 10;
+						width: 100%;
+					}
+				}
+			}
+		}
+		.editarea {
+			form {
+				margin-bottom: 30px;
+				.edittit {
+					margin-bottom: 15px;
+					border-left: 5px solid @primary-color;
+					text-indent: 1em;
+				}
+			}
+			p {
+				font-size: 24px;
+				font-weight: bold;
+				text-align: center;
+				color: #000000;
+			}
+		}
+		.signModal {
+			width: 100%;
+			.ivu-row {
+				height: 60px;
+				box-sizing: border-box;
+				.szl-label {
+					height: 100%;
+					box-sizing:border-box;
+					overflow: hidden;
+					font-size: 18px;
+					line-height: 60px;
+					text-align: center;
+					color: #ffffff;
+				}
+				.szl-sublabel {
+					height: 100%;
+					box-sizing:border-box;
+					overflow: hidden;
+					font-size: 16px;
+					line-height: 60px;
+					text-align: center;
+					color: #000000;
+				}
+			}
+		}
+	}
+}
+.vertical-center-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ivu-modal{
+        top: 0;
+    }
+}
+.fixed_top{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+.ivu-table-cell {
+	overflow: inherit;
+	text-align: center;
+	.constate {
+		position: relative;
+		background: url('../img/constateicon.png') no-repeat;
+		background-size: 100% 100%;
+		em {
+			display: none;
+			position: absolute;
+			bottom: -30px;
+			left: -20px;
+			z-index: 999;
+			width: 50px;
+			box-sizing: content-box;
+			padding: 3px;
+			background-color: #FFFACD;
+			text-align: center;
+		}
+	}
+	.constate:hover {
+		em {
+			display: block;
+		}
+	}
+	.preview {
+		position: relative;
+		background: url('../img/previewicon.png') no-repeat;
+		background-size: 100% 100%;
+		em {
+			display: none;
+			position: absolute;
+			bottom: -30px;
+			left: -20px;
+			z-index: 999;
+			width: 50px;
+			box-sizing: content-box;
+			padding: 3px;
+			background-color: #FFFACD;
+			text-align: center;
+		}
+	}
+	.preview:hover {
+		em {
+			display: block;
+		}
+	}
+	.checkicon {
+		position: relative;
+		background: url('../img/checkicon.png') no-repeat;
+		background-size: 100% 100%;
+		em {
+			display: none;
+			position: absolute;
+			bottom: -30px;
+			left: -20px;
+			z-index: 999;
+			width: 50px;
+			box-sizing: content-box;
+			padding: 3px;
+			background-color: #FFFACD;
+			text-align: center;
+		}
+	}
+	.checkicon:hover {
+		em {
+			display: block;
+		}
+	}
+	.removebtn {
+		position: relative;
+		background: url('../img/removeicon.png') no-repeat;
+		background-size: 100% 100%;
+		em {
+			display: none;
+			position: absolute;
+			bottom: -30px;
+			left: -20px;
+			z-index: 999;
+			width: 50px;
+			box-sizing: content-box;
+			padding: 3px;
+			background-color: #FFFACD;
+			text-align: center;
+		}
+	}
+	.removebtn:hover {
+		em {
+			display: block;
+		}
+	}
+}
+.ukeymengban {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	.ukeycon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: 400px;
+		height: 400px;
+		box-sizing: border-box;
+		padding: 70px 35px;
+		background-color: #ffffff;
+		.ukeytit {
+			position: relative;
+			width: 100%;
+			height: 30px;
+			span {
+				position: absolute;
+				top: 3px;
+				left: 30px;
+				width: 14px;
+				height: 24px;
+				background: url('../img/ukeyicon.png') no-repeat;
+				background-size: 100% 100%;
+			}
+			p {
+				font-size:24px;
+				font-weight:400;
+				text-align: center;
+				line-height: 30px;
+				color: #333333;
+			}
+		}
+		form {
+			width: 90%;
+			margin: 60px auto 0;
+			.ivu-input-group .ivu-input,
+			.ivu-btn-primary {
+				height: 50px;
+			}
+			.ivu-input-group {
+				font-size: 24px;
+			}
+		}
+	}
+}

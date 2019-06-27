@@ -1,0 +1,109 @@
+.modeldetail {
+	position: fixed;
+	top: 70px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	width: 1200px;
+	height: 650px;
+	margin: 30px auto 0;
+	overflow: auto;
+	.modelcon {
+		.modelleft {
+			float: left;
+			width: 240px;
+			height: 400px;
+			background-color: #ffffff;
+		}
+		.modelright {
+			float: right;
+			width: 931px;
+			.righttit {
+				position: relative;
+				width: 100%;
+				height: 60px;
+				box-sizing: border-box;
+				margin-bottom: 20px;
+				padding: 0px 30px;
+				background-color: #ffffff;
+				font-size: 26px;
+				line-height: 60px;
+				color: #333333;
+			}
+			.detailinfo {
+				.infotit {
+					width: 100%;
+					height: 26px;
+					margin-bottom: 20px;
+					box-sizing: border-box;
+					border-left: 3px solid @primary-color;
+					display: flex;
+					justify-content: flex-start;
+					.infotitxt {
+						margin: 0 20px 0 20px;
+						font-size: 20px;
+						line-height: 26px;
+						color: #333333;
+					}
+					.infoeditbtn {
+						position: relative;
+						width: 22px;
+						height: 22px;
+						margin-top: 2px;
+						background-color: @primary-color;
+						cursor: pointer;
+						span {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translateX(-50%) translateY(-50%);
+							width: 14px;
+							height: 14px;
+							background: url('../img/penicon.png');
+							background-size: 100% 100%;
+						}
+					}
+				}
+				.infowrap {
+					width: 100%;
+					margin-bottom: 20px;
+					border-top: 1px solid #E6E6E6;
+					border-left: 1px solid #E6E6E6;
+					display: flex;
+					justify-content: flex-start;
+					flex-wrap: wrap;
+					.infoitem {
+						width: 310px;
+						height: 50px;
+						background-color: #ffffff;
+						box-sizing: border-box;
+						border-bottom: 1px solid #E6E6E6;
+						border-right: 1px solid #E6E6E6;
+						display: flex;
+						justify-content: flex-start;
+						.infolabel {
+							width: 100px;
+							height: 100%;
+							background-color: #F5F5F5;
+							font-size: 16px;
+							text-align: center;
+							line-height: 50px;
+							color: #666666;
+						}
+						.infotxt {
+							width: 210px;
+							height: 100%;
+							font-size: 16px;
+							text-align: center;
+							line-height: 50px;
+							color: #666666;
+						}
+					}
+				}
+				.tabarea {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

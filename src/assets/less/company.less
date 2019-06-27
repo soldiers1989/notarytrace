@@ -1,0 +1,290 @@
+.company {
+	min-width: 1200px;
+	min-height: 1000px;
+	margin: 30px auto 0;
+	.comcon {
+		width: 100%;
+		.comleft {
+			float: left;
+			width: 250px;
+			margin: 0 20px;
+			background-color: #ffffff;
+			.listgroup {
+				width: 100%;
+				box-sizing: border-box;
+				border-top: 1px solid #f5f5f5;
+				.listbtn {
+					width: 100%;
+					padding: 10px 20px;
+					display: flex;
+					justify-content: space-between;
+					span {
+						font-size: 16px;
+						font-weight: bold;
+						color: #333333;
+					}
+					em {
+						width: 12px;
+						height: 7px;
+						margin-top: 8px;
+						background: url('../img/docicon1.png');
+						background-size: 100% 100%;
+					}
+				}
+				.listcon {
+					width: 100%;
+					.listitem {
+						height: 40px;
+						box-sizing: border-box;
+						padding: 10px 20px;
+						cursor: pointer;
+						a {
+							display: block;
+							width: 100%;
+							height: 100%;
+						}
+						.listicon {
+							float: left;
+							width: 20px;
+							height: 20px;
+							margin-right: 20px;
+							img {
+								display: block;
+								width: 100%;
+								height: 100%;
+							}
+						}
+						.listtxt {
+							float: left;
+							font-size: 16px;
+							color: #333333;
+						}
+						.listnum {
+							float: right;
+							font-size: 16px;
+							color: #999999;
+						}
+					}
+					.listitem:hover {
+						background-color: #F0F0F0;
+					}
+				}
+				.listcon .listactive {
+					background-color: #F0F0F0;
+				}
+			}
+		}
+		.comright {
+			float: left;
+			width:calc(100% - 300px);
+			padding-right: 30px;
+			.righttit {
+				width: 100%;
+				height: 60px;
+				box-sizing: border-box;
+				margin-bottom: 20px;
+				padding: 0 30px;
+				background-color: #ffffff;
+				font-size: 26px;
+				line-height: 60px;
+				color: #333333;
+			}
+			.detailinfo {
+				width: 100%;
+				overflow: hidden;
+				.infotit {
+					width: 100%;
+					height: 26px;
+					margin-bottom: 20px;
+					box-sizing: border-box;
+					border-left: 3px solid @primary-color;
+					display: flex;
+					justify-content: flex-start;
+					.infotitxt {
+						margin: 0 20px 0 20px;
+						font-size: 20px;
+						line-height: 26px;
+						color: #333333;
+					}
+				}
+				.infowrap {
+					width: 945px;
+					margin-bottom: 50px;
+					border-left: 1px solid #E6E6E6;
+					display: flex;
+					justify-content: flex-start;
+					flex-wrap: wrap;
+					.infoitem {
+						// width: 310px;
+						height: 50px;
+						background-color: #ffffff;
+						box-sizing: border-box;
+						border-top: 1px solid #E6E6E6;
+						border-bottom: 1px solid #E6E6E6;
+						border-right: 1px solid #E6E6E6;
+						display: flex;
+						justify-content: flex-start;
+						.infolabel {
+							width: 170px;
+							height: 100%;
+							background-color: #EFF7FE;
+							font-size: 16px;
+							text-align: center;
+							line-height: 50px;
+							color: #666666;
+						}
+						.infotxt {
+							width: 300px;
+							height: 100%;
+							font-size: 16px;
+							text-align: center;
+							line-height: 50px;
+							color: #666666;
+							overflow:hidden;
+					        text-overflow:ellipsis; 
+					        white-space: nowrap;
+						}
+					}
+				}
+				.imgwrap {
+					width: 945px;
+				}
+			}
+			.ukeytit {
+				width: 100%;
+				height: 80px;
+				box-sizing: border-box;
+				margin-bottom: 20px;
+				padding: 15px 30px;
+				background-color: #ffffff;
+				display: flex;
+				justify-content: space-between;
+				.titleft {
+					display: flex;
+					justify-content: flex-start;
+					.comavat {
+						width: 50px;
+						height: 50px;
+						img {
+							display: block;
+							width: 100%;
+							height: 100%;
+						}
+					}
+					.comname {
+						margin-left: 20px;
+						font-size: 20px;
+						line-height: 50px;
+						color: #333333;
+					}
+				}
+				.titright {
+					width: 90px;
+					height: 50px;
+					background-color: #0058A6;
+					border-radius: 10px;
+					font-size: 18px;
+					text-align: center;
+					line-height: 50px;
+					color: #ffffff;
+					cursor: pointer;
+				}
+			}
+			.ukeycon {
+				position: relative;
+				width: 100%;
+				height: 440px;
+				background-color: #ffffff;
+				box-sizing: border-box;
+				padding: 0px 30px;
+				background: url('../img/ukeybac.png');
+				background-size: 100% 100%;
+				.ukeyinfowrap {
+					position: absolute;
+					top: 55%;
+					left: 50%;
+					transform: translateX(-50%) translateY(-50%);
+					width: 858px;
+					height: 320px;
+					background-color: #FAFAFA;
+					box-sizing: border-box;
+					padding: 15px;
+					.wraptit {
+						font-size: 20px;
+						color: #333333;
+					}
+					.logowrap {
+						display: flex;
+						justify-content: space-around;
+						flex-direction: column;
+						width: 100%;
+						margin-top: 20px;
+						.logotxt {
+							font-size: 16px;
+							color: #999999;
+							word-wrap:break-word;
+							span {
+								font-size: 16px;
+								color: #333333;
+							}
+						}
+					}
+				}
+			}
+			.ukeyopration {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				margin-top: 20px;
+				.authed {
+					font-size: 24px;
+					text-align: center;
+					color: #333333;
+				}
+				.check {
+					padding-left: 15px;
+					font-size: 18px;
+					text-align: center;
+					line-height: 36px;
+					color: #0058A6;
+				}
+				.buyauth {
+					width: 140px;
+					height: 36px;
+					background-color: #0058A6;
+					border-radius: 5px;
+					font-size: 18px;
+					text-align: center;
+					line-height: 36px;
+					color: #ffffff;
+					cursor: pointer;
+				}
+			}
+			.empsearch {
+				width: 100%;
+				height: 60px;
+				background-color: #ffffff;
+				margin-top: 20px;
+			}
+			.righttable {
+				width: 100%;
+				margin: 20px 0;
+				.ivu-table-header {
+					.ivu-table-cell-with-selection {
+						padding: 0;
+					}
+				}
+				.ivu-table th {
+					height: 60px;
+					background-color: @primary-color;
+					font-size: 16px;
+					color: #ffffff; 
+					text-align: center;
+				}
+				.noneDisplay {
+					visibility:hidden;
+				}
+			}
+		}
+	}
+}
