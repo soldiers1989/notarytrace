@@ -72,6 +72,7 @@
         methods: {
             handleView (name) {
                 console.log(name);
+                console.log(name);
             },
             handleRemove (file) {
                 const fileList = this.$refs.upload.fileList;
