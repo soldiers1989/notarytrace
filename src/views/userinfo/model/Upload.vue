@@ -71,8 +71,6 @@
         },
         methods: {
             handleView (name) {
-                // this.imgName = name;
-                // this.visible = true;
                 console.log(name);
             },
             handleRemove (file) {
