@@ -29,7 +29,7 @@
                     :before-upload="handleBeforeUpload"
                     multiple
                     type="drag"
-                    action="//jsonplaceholder.typicode.com/posts/">
+                    action="http://192.168.20.47:28880/PostFile?BussName=L05vdGFyeUJyaWRnZS9IV0hUX0dvb2RzQ29uc2lnbm1lbnROb3RlLnhtbA==&PlatName=溯证签&access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ5YW5ndW9iaWFvIiwianRpIjoiNWI1MWQ5NmMtYzUyMi00ODU3LWJhMDItNjkxZThjOGMzYmQ0IiwiaWF0IjoiMjAxOS83LzIgMjo0MjozMyIsImV4cCI6MTU2MjAzNjkzMywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo2MjU5MiIsImF1ZCI6IkFwaSJ9.vd_eZmif1_NnHtaLZVEThVlAYup1zfe8imBA2VBEZ54">
                     <div style="padding: 20px 0">
                         <Icon type="ios-cloud-upload" size="52" style="color: #3399ff"></Icon>
                         <p>点击或将文件拖入上传</p>
@@ -43,10 +43,13 @@
     </div>
 </template>
 <script>
-    import $ from 'jquery';
     export default {
         data() {
             return {
+                headers: {
+                    'Access-Control-Allow-Origin' : '*',
+                    'Content-Type': 'multipart/form-data'
+                },
                 defaultList: [
                     {
                         'name': 'a42bdcc1178e62b4694c830f028db5c0',
@@ -80,8 +83,8 @@
             },
             handleSuccess (res, file) {
                 console.log(res, file)
-                file.url = 'https://o5wwk8baw.qnssl.com/7eb99afb9d5f317c912f08b5212fd69a/avatar';
-                file.name = '7eb99afb9d5f317c912f08b5212fd69a';
+                // file.url = 'https://o5wwk8baw.qnssl.com/7eb99afb9d5f317c912f08b5212fd69a/avatar';
+                // file.name = '7eb99afb9d5f317c912f08b5212fd69a';
             },
             handleFormatError (file) {
                 this.$Notice.warning({
