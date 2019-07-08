@@ -63,7 +63,7 @@
                 <Form v-if="addData != null" ref="addPostData" :model="addPostData" :rules="addRuleValidate">
                     <h2 class="edittit">合同内容</h2>
                     <template v-for="item in addData">
-                        <FormItem :label="item.showName" :label-width="100" :prop="item.fieldName" v-if="item.type !== 9">
+                        <FormItem :label="item.showName" :label-width="100" :prop="item.fieldName" v-if="item.type !== 9 && item.type !== 17">
                             <Input v-if="item.type == 1"  v-model="addPostData[item.fieldName]"/>
                             <Select v-if="item.type == 5" v-model="addPostData[item.fieldName]">
                                 <Option :value="subitem.key" v-for="subitem in item.dictionarys">{{subitem.value}}</Option>
@@ -71,8 +71,12 @@
                             <DatePicker v-if="item.type == 12" v-model="addPostData[item.fieldName]" type="datetime" placeholder="Select date and time"></DatePicker>
                         </FormItem>
                         <template v-if="item.type == 9">
-                            <h2 class="edittit">附件</h2>
-                            <Upload></Upload>
+                            <h2 class="edittit">附件(照片)</h2>
+                            <Upload upType="pics" @getPicsData="getPicsData"></Upload>
+                        </template>
+                        <template v-if="item.type == 17">
+                            <h2 class="edittit">附件(文件)</h2>
+                            <Upload upType="docs" @getDocsData="getDocsData"></Upload>
                         </template>
                     </template>
                 </Form>
@@ -417,14 +421,35 @@
                     }).catch(error => {})
                 }
             },
+            //获取照片上传组件数据
+            getPicsData(data){
+                console.log(data);
+               
+                for( var i=0; i < this.addData.length; i++ ) {
+                    if(this.addData[i].type == 9){
+                        this.addPostData[this.addData[i].fieldName] = data;
+                        console.log(this.addPostData)
+                    }
+                }
+            },
+            //获取文件上传组件数据
+            getDocsData(data){
+                console.log(data);
+                for( var i=0; i < this.addData.length; i++ ) {
+                    if(this.addData[i].type == 17){
+                        this.addPostData[this.addData[i].fieldName] = data;
+                        console.log(this.addPostData)
+                    }
+                }
+            },
             //新增主表内容确定事件
             addConfirm(){
                 this.addFinaData.EcDate = Base64.encode(JSON.stringify(this.addPostData));
                 this.addFinaData.xmlUrl = this.pageinfo.xmlMessage;
                 this.addFinaData.token = this.pageinfo.token;
                 this.addFinaData.contractTypeId = this.baseData.contractTypeId;
-                console.log(this.$refs['addFinaData.SignParts[index]'])
-                console.log(this.$refs['addPostData'])
+                console.log(this.addPostData)
+                console.log(this.addFinaData)
                 for( var i=0; i <this.$refs['addFinaData.SignParts[index]'].length; i++ ) {
                     this.$refs['addFinaData.SignParts[index]'][i].validate((valid) => {
                         console.log(valid);
