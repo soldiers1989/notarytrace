@@ -51,8 +51,7 @@
         <Modal
             v-model="editState"
             title="合同信息编辑"
-            width="1000"
-            class-name="vertical-center-modal">
+            width="1000">
             <div class="addarea" v-if="signData != null">
                 <Form v-for="(item,index) in signData" ref="signParts[index]" :model="signParts[index]" :rules="signRuleValidate">
                     <h2 class="edittit">{{item.titleName}}</h2>
@@ -73,13 +72,23 @@
             <div class="addarea">
                 <Form v-if="editData != null" ref="editPostData" :model="editPostData" :rules="ruleValidate">
                     <h2 class="edittit">{{initData.subtit}}</h2>
-                    <FormItem :label="item.showName" v-for="item in editData" :label-width="100" :prop="item.fieldName">
-                        <Input v-if="item.type == 1"  v-model="editPostData[item.fieldName]"/>
-                        <Select v-if="item.type == 5" v-model="editPostData[item.fieldName]">
-                            <Option :value="subitem.key" v-for="subitem in item.dictionarys">{{subitem.value}}</Option>
-                        </Select>
-                        <DatePicker v-if="item.type == 12" v-model="editPostData[item.fieldName]" type="datetime" placeholder="Select date and time"></DatePicker>
-                    </FormItem>
+                    <template v-for="item in editData">
+                        <FormItem :label="item.showName" :label-width="100" :prop="item.fieldName" v-if="item.type !== 9 && item.type !== 17">
+                            <Input v-if="item.type == 1"  v-model="editPostData[item.fieldName]"/>
+                            <Select v-if="item.type == 5" v-model="editPostData[item.fieldName]">
+                                <Option :value="subitem.key" v-for="subitem in item.dictionarys">{{subitem.value}}</Option>
+                            </Select>
+                            <DatePicker v-if="item.type == 12" v-model="editPostData[item.fieldName]" type="datetime" placeholder="Select date and time"></DatePicker>
+                        </FormItem>
+                        <template v-if="item.type == 9">
+                            <h2 class="edittit">附件(照片)</h2>
+                            <Upload upType="pics" :defaultData="item.attachment" @getPicsData="getPicsData"></Upload>
+                        </template>
+                        <template v-if="item.type == 17">
+                            <h2 class="edittit">附件(文件)</h2>
+                            <Upload upType="docs" :subDefaultData="item.attachment" @getDocsData="getDocsData"></Upload>
+                        </template>
+                    </template>
                 </Form>
             </div>
             <div slot="footer">
@@ -157,6 +166,7 @@
 <script>
 	import Model from '@/api/model/model';
     let Base64 = require('js-base64').Base64;
+    import Upload from '@/views/userinfo/model/Upload.vue'
 	export default {
         props: {
             initData: Object,
@@ -274,14 +284,15 @@
 	 		}
 	 	},
 	 	components:{
-           
+           Upload
         },
         created() {    
             this.getParams()
         },
         mounted() {
         	console.log(this.initData)
-            this.getCommonDetail(this.pageinfo.xmlMessage, this.pageinfo.guid)
+            this.getCommonDetail(this.pageinfo.xmlMessage, this.pageinfo.guid,
+                this.pageinfo.token)
         },
         methods: {
         	getParams() {
@@ -340,8 +351,8 @@
                 this.signModal = false;
             },
             //获取从表内容
-            getCommonDetail(xmlUrl, guid){
-                Model.GetCommonDetail(xmlUrl, guid).then((res) => {
+            getCommonDetail(xmlUrl, guid, token){
+                Model.GetCommonDetail(xmlUrl, guid, token).then((res) => {
                     console.log(res);
                     this.subBodyData = res.message.bodyDetail;
                     this.subTabList = res.message.childTable;
@@ -369,6 +380,29 @@
                 this.editState = true;
                 this.GetCommonDetailEdit();
             },
+            //获取照片上传组件数据
+            getPicsData(data){
+                console.log(data);
+                console.log(this.editData);
+
+                for( var i=0; i < this.editData.length; i++ ) {
+                    if(this.editData[i].type == 9){
+                        this.editPostData[this.editData[i].fieldName] = data;
+                        console.log(this.editPostData)
+                    }
+                }
+            },
+            //获取文件上传组件数据
+            getDocsData(data){
+                console.log(data);
+                console.log(this.editData);
+                for( var i=0; i < this.editData.length; i++ ) {
+                    if(this.editData[i].type == 17){
+                        this.editPostData[this.editData[i].fieldName] = data;
+                        console.log(this.editPostData)
+                    }
+                }
+            },
             editConfirm() {
 
                 for( var i=0; i <this.$refs['signParts[index]'].length; i++ ) {
@@ -383,7 +417,7 @@
                                     Model.PostCommonDetailEdit(this.pageinfo.xmlMessage, this.pageinfo.guid,this.editPostData,this.signParts).then((res) => {
                                         this.loadingbtn = false;
                                         if(res.statusCode == 0){
-                                            this.getCommonDetail(this.pageinfo.xmlMessage, this.pageinfo.guid);
+                                            this.getCommonDetail(this.pageinfo.xmlMessage, this.pageinfo.guid, this.pageinfo.token);
                                             this.editState = false;
                                             this.$Message.success('提交成功!');
                                         }else {
@@ -401,7 +435,7 @@
 
             },
             GetCommonDetailEdit(){
-                Model.GetCommonDetailEdit(this.pageinfo.xmlMessage, this.pageinfo.guid).then((res) => {
+                Model.GetCommonDetailEdit(this.pageinfo.xmlMessage, this.pageinfo.guid, this.pageinfo.token).then((res) => {
                     console.log(res);
                     this.ruleValidate = JSON.parse(res.message.validations);
                     if(res.message.mySigned){

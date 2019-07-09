@@ -48,12 +48,13 @@ export default {
             });
         });
     },
-    GetCommonDetail (xmlUrl, guid) {
+    GetCommonDetail (xmlUrl, guid, token) {
         return new Promise((resolve, reject) => {
             const url = '/api/Contract/GetCommonDetail';
             Util.ajax.post(url,{
                     xmlUrl: xmlUrl,
-                    guid: guid
+                    guid: guid,
+                    token: token
                 }).then(response => {
                 resolve(response.data);
             }).catch(error => {
@@ -62,12 +63,13 @@ export default {
             });
         });
     },
-    GetCommonDetailEdit (xmlUrl, guid) {
+    GetCommonDetailEdit (xmlUrl, guid, token) {
         return new Promise((resolve, reject) => {
             const url = '/api/Contract/GetCommonDetailEdit';
             Util.ajax.post(url,{
                     xmlUrl: xmlUrl,
-                    guid: guid
+                    guid: guid,
+                    token: token
                 }).then(response => {
                 resolve(response.data);
             }).catch(error => {
