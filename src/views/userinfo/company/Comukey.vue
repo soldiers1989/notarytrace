@@ -32,6 +32,22 @@
         </div>
         <div class="listgroup">
           <div class="listbtn">
+            <span>用户管理</span>
+            <em></em>
+          </div>
+          <ul class="listcon">
+            <li class="listitem">
+              <router-link tag="a" :to="{path:'/company/user'}">
+                <div class="listicon">
+                  <img src="../../../assets/img/comicon4.png" alt="">
+                </div>
+                <div class="listtxt">用户管理</div>
+              </router-link>
+            </li>
+          </ul>
+        </div>
+        <div class="listgroup">
+          <div class="listbtn">
             <span>授权管理</span>
             <em></em>
           </div>

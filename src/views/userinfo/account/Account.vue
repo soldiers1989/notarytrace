@@ -15,10 +15,10 @@
 			        	<router-link tag="a" :to="{path:'/account/mysignature'}"></router-link>
 			        	我的签章
 			        </Menu-item>
-			        <!-- <Menu-item name="4">
+			        <Menu-item name="4">
 			        	<router-link tag="a" :to="{path:'/account/contact'}"></router-link>
-			        	联系人
-			        </Menu-item> -->
+			        	法人授权
+			        </Menu-item>
 			        <!-- <Menu-item name="5">
 			        	<router-link tag="a" :to="{path:'/account/feedback'}"></router-link>
 			        	问题反馈
