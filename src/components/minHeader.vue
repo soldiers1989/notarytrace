@@ -117,6 +117,8 @@
 						$(".navitem span").eq(3).hide(500);
 						$(".navitem a").eq(4).css("color","#333333");
 						$(".navitem span").eq(4).hide(500);
+						$(".navitem a").eq(5).css("color","#333333");
+						$(".navitem span").eq(5).hide(500);
 					}
 					if($(this).parent().index() == 1){
 						$(".navitem a").eq(0).css("color","#333333");
@@ -127,6 +129,8 @@
 						$(".navitem span").eq(3).hide(500);
 						$(".navitem a").eq(4).css("color","#333333");
 						$(".navitem span").eq(4).hide(500);
+						$(".navitem a").eq(5).css("color","#333333");
+						$(".navitem span").eq(5).hide(500);
 					}
 					if($(this).parent().index() == 2){
 						$(".navitem a").eq(0).css("color","#333333");
@@ -137,6 +141,8 @@
 						$(".navitem span").eq(3).hide(500);
 						$(".navitem a").eq(4).css("color","#333333");
 						$(".navitem span").eq(4).hide(500);
+						$(".navitem a").eq(5).css("color","#333333");
+						$(".navitem span").eq(5).hide(500);
 					}
 					if($(this).parent().index() == 3){
 						$(".navitem a").eq(0).css("color","#333333");
@@ -147,6 +153,8 @@
 						$(".navitem span").eq(2).hide(500);
 						$(".navitem a").eq(4).css("color","#333333");
 						$(".navitem span").eq(4).hide(500);
+						$(".navitem a").eq(5).css("color","#333333");
+						$(".navitem span").eq(5).hide(500);
 					}
 					if($(this).parent().index() == 4){
 						$(".navitem a").eq(0).css("color","#333333");
@@ -157,6 +165,8 @@
 						$(".navitem span").eq(2).hide(500);
 						$(".navitem a").eq(3).css("color","#333333");
 						$(".navitem span").eq(3).hide(500);
+						$(".navitem a").eq(5).css("color","#333333");
+						$(".navitem span").eq(5).hide(500);
 					}
 					if($(this).parent().index() == 5){
 						$(".navitem a").eq(0).css("color","#333333");

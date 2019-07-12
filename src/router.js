@@ -81,11 +81,11 @@ export default new Router({
               }
             },
             {
-              path: '/account/contact',
+              path: '/account/authorization',
               name: 'contact',
-              component: () => import('./views/userinfo/account/pages/Contact.vue'),
+              component: () => import('./views/userinfo/account/pages/Authorization.vue'),
               meta: { 
-                title: '溯证签 - 账号管理-联系人',
+                title: '溯证签 - 法人授权',
                 requiresAuth: true
               }
             },
@@ -149,10 +149,19 @@ export default new Router({
         },
         {
           path: '/company/employee',
-          name: 'ukey',
+          name: 'employee',
           component: () => import('./views/userinfo/company/Comemployee.vue'),
           meta: { 
             title: '溯证签 - 企业员工授权',
+            requiresAuth: true
+          },
+        },
+        {
+          path: '/company/user',
+          name: 'comuser',
+          component: () => import('./views/userinfo/company/User.vue'),
+          meta: { 
+            title: '溯证签 - 用户管理',
             requiresAuth: true
           },
         }
