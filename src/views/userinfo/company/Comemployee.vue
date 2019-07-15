@@ -80,7 +80,7 @@
           <Table :columns="tableTit" :data="tableData"></Table>
           <div class="page">
               <Page :total="pageInfo.total_page" @on-change="handleCurrentPage" prev-text="上一页" next-text="下一页" />
-        </div>
+          </div>
         </div>
       </div>
       <Modal
@@ -148,7 +148,7 @@ export default {
   		return {
         token:'',
         timestamp: '',
-        pin: '1234',
+        pin: '',
         baseData: {},
         tableTit: [
             {
@@ -313,6 +313,7 @@ export default {
   	},
   	created(){
   		this.token = this.$cookieStore.getCookie( 'token');
+      this.pin = this.$cookieStore.getCookie( 'ukeyPin');
       this.timestamp = parseInt(new Date().getTime()/1000);
       this.GetCryptSignHashString(this.timestamp, this.pin);
   	},
@@ -485,8 +486,6 @@ export default {
         })
       },
       CheckBoxChange(typeArray,sysid,index) {
-        // this.addData.addPostAuthtype += sysid + ',' + authtype + ';';
-        // console.log(this.addData.addPostAuthtype);
         if(typeArray.length == 0){
           let tempArray = this.addData.addPostAuthtype.split(";"),
               subtempArray = null;
@@ -513,8 +512,6 @@ export default {
             this.addData.addBaseData[index].check = ['1', '2'];
             this.addData.addPostAuthtype += sysid + ',' + '2' + ';';
         }
-        console.log(typeArray,sysid)
-        console.log(this.addData.addPostAuthtype)
       },
       authEditBtn(params){
         this.editData.submembersid = params;

@@ -82,7 +82,7 @@ export default new Router({
             },
             {
               path: '/account/authorization',
-              name: 'contact',
+              name: 'authorization',
               component: () => import('./views/userinfo/account/pages/Authorization.vue'),
               meta: { 
                 title: '溯证签 - 法人授权',

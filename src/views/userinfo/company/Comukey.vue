@@ -117,7 +117,7 @@ export default {
         ukeystate: true,
         token:'',
         timestamp: '',
-        pin: '1234',
+        pin: '',
         baseData: {},
         ukeyInfo: {}
   		}
@@ -127,6 +127,7 @@ export default {
   	},
   	created(){
   		this.token = this.$cookieStore.getCookie( 'token');
+      this.pin = this.$cookieStore.getCookie( 'ukeyPin');
       this.timestamp = parseInt(new Date().getTime()/1000);
       this.GetCryptSignHashString(this.timestamp, this.pin);
       // this.GetCertInfo();

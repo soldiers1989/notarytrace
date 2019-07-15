@@ -15,8 +15,8 @@
 			        	<router-link tag="a" :to="{path:'/account/mysignature'}"></router-link>
 			        	我的签章
 			        </Menu-item>
-			        <Menu-item name="4">
-			        	<router-link tag="a" :to="{path:'/account/contact'}"></router-link>
+			        <Menu-item name="4" v-if="isLegal">
+			        	<router-link tag="a" :to="{path:'/account/authorization'}"></router-link>
 			        	法人授权
 			        </Menu-item>
 			        <!-- <Menu-item name="5">
@@ -35,10 +35,18 @@
 		data() {
 	 		return {
 	 			activeName: '1',
+	 			isLegal: false,
 	 		}
 	 	},
 	 	components:{
             
+        },
+        created(){
+        	if(this.$cookieStore.getCookie( 'isLegal') == 'true'){
+        		this.isLegal = true;
+        	}else {
+        		this.isLegal = false;
+        	}
         },
         mounted() {
         	this.checkRouter();
@@ -54,7 +62,7 @@
 			    if(this.$route.path == '/account/mysignature'){
 			    	this.activeName = '3'
 			    }
-			    if(this.$route.path == '/account/contact'){
+			    if(this.$route.path == '/account/authorization'){
 			    	this.activeName = '4'
 			    }
 			    if(this.$route.path == '/account/feedback'){

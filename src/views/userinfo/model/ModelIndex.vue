@@ -261,7 +261,8 @@
                     SignParts: [], 
                     xmlUrl: "",
                     token: '',
-                    contractTypeId:""
+                    contractTypeId:"",
+                    ecTypeWarrantGuid: ''
                 },
                 signModal: false
 	 		}
@@ -448,6 +449,7 @@
                 this.addFinaData.xmlUrl = this.pageinfo.xmlMessage;
                 this.addFinaData.token = this.pageinfo.token;
                 this.addFinaData.contractTypeId = this.baseData.contractTypeId;
+                this.addFinaData.ecTypeWarrantGuid = this.initData.ecTypeWarrantGuid;
                 console.log(this.addPostData)
                 console.log(this.addFinaData)
                 for( var i=0; i <this.$refs['addFinaData.SignParts[index]'].length; i++ ) {

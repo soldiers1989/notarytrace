@@ -135,7 +135,7 @@ export default {
   		return {
         token:'',
         timestamp: '',
-        pin: '1234',
+        pin: '',
         baseData: {},
         tableTit: [
             {
@@ -213,6 +213,7 @@ export default {
   	},
   	created(){
   		this.token = this.$cookieStore.getCookie( 'token');
+      this.pin = this.$cookieStore.getCookie( 'ukeyPin');
       this.timestamp = parseInt(new Date().getTime()/1000);
       this.GetCryptSignHashString(this.timestamp, this.pin);
   	},

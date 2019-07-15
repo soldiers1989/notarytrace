@@ -278,7 +278,7 @@
                     xmlUrl: "",
                     token: '',
                     fkName:'',
-                    fkGuid:''
+                    fkGuid:'',
                 },
                 signModal: false
 	 		}

@@ -33,12 +33,23 @@ router.beforeEach((to, from, next) => {
  		console.log(store.getters.validate.isLogin)
 	  	if(store.getters.validate.isLogin) {
 	  		console.log('token 有效')
-	  		if(to.name == 'company'){
-	  			if(Vue.prototype.$cookieStore.getCookie( 'isadmin') == 'true'){
-	  				next()
-	  			}else {
-	  				iView.LoadingBar.finish();  
-	  				next('/personal');
+	  		if(to.name == 'company' || to.name == 'authorization'){
+	  			if(to.name == 'company') {
+		  			if(Vue.prototype.$cookieStore.getCookie( 'isadmin') == 'true'){
+		  				next()
+		  			}else {
+		  				iView.LoadingBar.finish();  
+		  				next('/personal');
+		  			}
+	  			}
+
+	  			if(to.name == 'authorization') {
+		  			if(Vue.prototype.$cookieStore.getCookie( 'isLegal') == 'true'){
+		  				next()
+		  			}else {
+		  				iView.LoadingBar.finish();  
+		  				next('/personal');
+		  			}
 	  			}
 
 	  		}else {

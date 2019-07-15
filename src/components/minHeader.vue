@@ -81,13 +81,10 @@
             
         },
         created(){
-        	console.log(this.$cookieStore.getCookie( 'isadmin') == 'true')
         	if(this.$cookieStore.getCookie( 'isadmin') == 'true'){
         		this.isadmin = true;
-        		console.log(1)
         	}else {
         		this.isadmin = false;
-        		console.log(2)
         	}
         	console.log(this.isadmin)
         },
@@ -215,6 +212,9 @@
         		if(name == 'exit') {
         			this.$cookieStore.delCookie('accesstoken');
         			this.$cookieStore.delCookie('token');
+        			this.$cookieStore.delCookie('isadmin');
+        			this.$cookieStore.delCookie('ukeyPin');
+        			this.$cookieStore.delCookie('isLegal');
 			    	this.$store.dispatch('changeLoginState', false);
 			    	this.$router.push({
 	                	path: '/login'

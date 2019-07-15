@@ -41,7 +41,8 @@
                     titList: [],
                     subtit:'',
                     dictionary:{},
-                    menuname: ''
+                    menuname: '',
+                    ecTypeWarrantGuid: ''
                 },
                 leftMenuList:[]
 	 		}
@@ -87,6 +88,7 @@
                 this.$router.push({
                     path: '/model'
                 })
+                this.initData.ecTypeWarrantGuid = name;
                 for(let key in this.initData.dictionary){
                     if(name == key){
                         this.initData.subtit = this.initData.dictionary[key];
