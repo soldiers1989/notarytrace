@@ -211,14 +211,17 @@
                 		var token = this.loginData.token,
 	            		access_token = this.loginData.access_token,
 	            		isadmin = this.loginData.isAdmin,
-	            		userid = this.loginData.userid;
+	            		userid = this.loginData.userid,
+	            		isLegal = this.loginData.isLegal;
 	            		console.log(token,access_token)
 	                	this.$cookieStore.addCookie( 'token' , token);
 	                    this.$cookieStore.addCookie( 'accesstoken' , access_token);
 	                    console.log(this.loginData.isAdmin);
 	                    console.log(isadmin);
 	                    this.$cookieStore.addCookie( 'isadmin' , isadmin);
+	                    this.$cookieStore.addCookie( 'isLegal' , isLegal);
 	                    this.$cookieStore.addCookie( 'userid' , userid);
+	                    this.$cookieStore.addCookie( 'ukeyPin' , this.ukeypin.pin);
 	                    this.$store.dispatch('changeLoginState', true);
 	                    this.$router.push({
 			                path: '/personal'

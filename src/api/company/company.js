@@ -96,13 +96,14 @@ export default {
             });
         });
     },
-    AddLegalAuthorization(toKen,membersid,signal){
+    AddLegalAuthorization(toKen,membersid,comAuthId,signal){
         return new Promise((resolve, reject) => {
             const url = '/api/Enterprise/AddLegalAuthorization';
             Util.ajax.post(url,
                 {   
                     toKen: toKen,
                     membersid: membersid,
+                    comAuthId: comAuthId,
                     signal: signal
                 }).then(response => {
                 resolve(response.data);
@@ -207,5 +208,41 @@ export default {
                 reject(error.response.data);
             });
         });
-    }
+    },
+    LegalAuthorization (pageIndex, pageSize, filler,validationState
+, toKen, timeStamp, signal) {
+        return new Promise((resolve, reject) => {
+            const url = '/api/Enterprise/LegalAuthorization';
+            Util.ajax.post(url,
+                {   pageIndex: pageIndex,
+                    pageSize: pageSize,
+                    filler: filler,
+                    validationState: validationState,
+                    toKen: toKen,
+                    timeStamp: timeStamp,
+                    signal: signal
+                }).then(response => {
+                resolve(response.data);
+            }).catch(error => {
+                reject(error.response.data);
+            });
+        });
+    },
+    SaveLegalTemplateAuthorization(toKen,membersid,selectValue,globalscmpSysid,signal){
+        return new Promise((resolve, reject) => {
+            const url = '/api/Enterprise/SaveLegalTemplateAuthorization';
+            Util.ajax.post(url,
+                {   
+                    toKen: toKen,
+                    membersid: membersid,
+                    selectValue: selectValue,
+                    globalscmpSysid: globalscmpSysid,
+                    signal: signal
+                }).then(response => {
+                resolve(response.data);
+            }).catch(error => {
+                reject(error.response.data);
+            });
+        });
+    },
 }
